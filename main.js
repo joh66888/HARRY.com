@@ -33,7 +33,6 @@ scene.add(cube);
 // 創建一個球體 new
 const geometry = new THREE.CylinderGeometry( 5, 5, 20, 32 ); 
 const material = new THREE.MeshBasicMaterial( {color: 0xffff00} ); 
-// 宣告球體變數
 const cylinder = new THREE.Mesh( geometry, material ); 
 scene.add( cylinder );
 
