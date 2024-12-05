@@ -19,7 +19,8 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 
-// 創建一個立方體
+// 創建一個立方體 old
+/*
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshPhongMaterial({ 
     color: 0x00ff00,
@@ -27,6 +28,14 @@ const material = new THREE.MeshPhongMaterial({
 });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
+*/
+
+// 創建一個球體 new
+const geometry = new THREE.CylinderGeometry( 5, 5, 20, 32 ); 
+const material = new THREE.MeshBasicMaterial( {color: 0xffff00} ); 
+// 宣告球體變數
+const cylinder = new THREE.Mesh( geometry, material ); 
+scene.add( cylinder );
 
 // 添加燈光
 const light = new THREE.DirectionalLight(0xffffff, 1);
@@ -45,13 +54,27 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-// 動畫循環
+/*
+// 動畫循環 old
 function animate() {
     requestAnimationFrame(animate);
     
     // 旋轉立方體
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
+    
+    controls.update();
+    renderer.render(scene, camera);
+}
+*/
+
+// 動畫循環 new
+function animate() {
+    requestAnimationFrame(animate);
+    
+    // 旋轉球體
+    cylinder.rotation.x += 0.01;
+    cylinder.rotation.y += 0.01;
     
     controls.update();
     renderer.render(scene, camera);
