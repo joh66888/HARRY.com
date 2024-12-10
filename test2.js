@@ -10,7 +10,7 @@ const scene = new THREE.Scene({background: new THREE.Color(0x000000)});
 
 // 創建相機
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight);
-camera.position.z = 100;
+camera.position.z = 60;
 scene.add( camera );
 
 // 創建3D物件
