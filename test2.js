@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 // canvas
-const canvas = document.QuerySelector('#webgl');
+const canvas = document.querySelector('#webgl');
 
 // 創建場景
 const scene = new THREE.Scene({background: new THREE.Color(0x000000)});
