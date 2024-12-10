@@ -1,3 +1,5 @@
+console.log('test2.js is loaded');
+
 import * as THREE from 'three';
 
 // canvas
@@ -8,12 +10,12 @@ const scene = new THREE.Scene({background: new THREE.Color(0x000000)});
 
 // 創建相機
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight);
-camera.position.z = 20;
+camera.position.z = 100;
 scene.add( camera );
 
 // 創建3D物件
 const geometry = new THREE.TorusKnotGeometry( 10, 3, 50, 10 ); 
-const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } ); 
+const material = new THREE.MeshBasicMaterial( { color: 0x03bfff, wireframe: true } ); 
 const torusKnot = new THREE.Mesh( geometry, material ); 
 scene.add( torusKnot );
 
