@@ -32,3 +32,5 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+// 開始動畫
+animate();
